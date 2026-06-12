@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Ветеринарная клиника «Добрый Доктор» — забота о ваших питомцах">
+  <title>Добрый Доктор — Ветеринарная клиника</title>
+  
+  <!-- Основные стили -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- VK API -->
+<script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script>
+</head>
+<body>
+
+  <!-- COOKIE УВЕДОМЛЕНИЕ -->
+  <div class="cookie-notice" id="cookieNotice">
+    <div class="cookie-content">
+      <img src="images/info.svg" alt="info" class="cookie-icon">
+      <p>Мы используем cookie для улучшения работы сайта и определения повторных посещений.</p>
+      <button class="cookie-btn" id="cookieAgree">Принять</button>
+    </div>
+  </div>
+
+  <!-- ХЕДЕР -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo-wrapper">
+        <img src="images/logo_color.svg" alt="Добрый Доктор" class="logo" onerror="this.src='https://via.placeholder.com/50x50?text=DD'">
+        <span class="logo-text">Добрый Доктор</span>
+      </div>
+      <nav class="nav">
+        <a href="#about" class="nav-link">О нас</a>
+        <a href="#staff" class="nav-link">Сотрудники</a>
+        <a href="#patients" class="nav-link">Пациентам</a>
+        <a href="#reviews" class="nav-link">Отзывы</a>
+        <a href="#footer" class="nav-link">Контакты</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <img src="images/menu.svg" alt="Меню" class="menu-icon">
+      </button>
+    </div>
+  </header>
+
+  <!-- ГЛАВНЫЙ ЭКРАН (HERO) -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">Добрый Доктор</h1>
+        <p class="hero-subtitle">Ветеринарная клиника с заботой о ваших питомцах</p>
+        <button class="hero-btn" onclick="document.getElementById('footer').scrollIntoView({behavior: 'smooth'})">
+          <img src="images/calendar.svg" alt="Запись" class="btn-icon"> Записаться на приём
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- О НАС -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">О нас</h2>
+      <div class="about-content">
+        <p>Ветеринарная клиника «Добрый Доктор» работает с 2023 года. Мы специализируемся на лечении домашних животных.</p>
+        <p>Современное оборудование, дневной стационар и команда опытных врачей - всё для здоровья ваших питомцев.</p>
+        <div class="about-features">
+          <span class="feature"><img src="images/hospital.svg" alt="Стационар" class="feature-icon"> Дневной стационар</span>
+          <span class="feature"><img src="images/heart.svg" alt="Вакцинация" class="feature-icon"> Вакцинация</span>
+          <span class="feature"><img src="images/activity.svg" alt="Хирургия" class="feature-icon"> Хирургия</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- УСЛУГИ И ЦЕНЫ -->
+<section id="services" class="services">
+  <div class="container">
+    <h2 class="section-title">Наши услуги</h2>
+    
+    <div class="services-wrapper">
+      <button class="scroll-btn scroll-left" id="scrollLeftBtn">
+        <img src="images/arrow-left.svg" alt="Назад">
+      </button>
+      
+      <div class="services-scroll-container" id="servicesScrollContainer">
+        <div class="services-grid">
+          
+          <div class="service-card">
+            <h3 class="service-title">Терапия</h3>
+            <p class="service-price">от 80 ₽ до 4 200 ₽</p>
+          </div>
+          
+          <div class="service-card">
+            <h3 class="service-title">Вызов врача на дом</h3>
+            <p class="service-price">от 500 ₽ до 1 650 ₽</p>
+          </div>
+          
+          <div class="service-card">
+            <h3 class="service-title">Терапевтические манипуляции</h3>
+            <p class="service-price">от 35 ₽ до 1 650 ₽</p>
+          </div>
+          
+          <div class="service-card">
+            <h3 class="service-title">Хирургические манипуляции</h3>
+            <p class="service-price">от 150 ₽ до 2 000 ₽</p>
+          </div>
+          
+          <div class="service-card">
+            <h3 class="service-title">Хирургия (операция)</h3>
+            <p class="service-price">от 300 ₽ до 9 000 ₽</p>
+          </div>
+          
+          <div class="service-card">
+            <h3 class="service-title">Кастрация / Стерилизация</h3>
+            <p class="service-price">от 240 ₽ до 15 000 ₽</p>
+          </div>
+          
+          <div class="service-card">
+            <h3 class="service-title">Стоматология</h3>
+            <p class="service-price">от 100 ₽ до 1 700 ₽</p>
+          </div>
+          
+          <div class="service-card">
+            <h3 class="service-title">Стрижка животных</h3>
+            <p class="service-price">от 200 ₽ до 2 500 ₽</p>
+          </div>
+          
+          <div class="service-card">
+            <h3 class="service-title">Эвтаназия и кремация</h3>
+            <p class="service-price">от 60 ₽ до 20 500 ₽</p>
+          </div>
+          
+          <div class="service-card">
+            <h3 class="service-title">Лабораторное исследование</h3>
+            <p class="service-price">от 120 ₽ до 2 430 ₽</p>
+          </div>
+          
+          <div class="service-card">
+            <h3 class="service-title">УЗИ</h3>
+            <p class="service-price">от 500 ₽ до 1 100 ₽</p>
+          </div>
+          
+        </div>
+      </div>
+      
+      <button class="scroll-btn scroll-right" id="scrollRightBtn">
+        <img src="images/arrow-right.svg" alt="Вперёд">
+      </button>
+    </div>
+    
+    <!-- Подпись об уточнении цены -->
+    <div class="services-note">
+      <p>
+        <img src="images/info.svg" alt="Информация" class="note-icon">
+        Точная стоимость услуги зависит от состояния животного, сложности процедуры и других факторов. 
+        <a href="#footer" class="note-link">Пожалуйста, свяжитесь с нами</a> для уточнения цены и записи на приём.
+      </p>
+    </div>
+    
+  </div>
+</section>
+
+ <!-- СОТРУДНИКИ -->
+<section id="staff" class="staff">
+  <div class="container">
+    <h2 class="section-title">Наши специалисты</h2>
+    <div class="staff-grid">
+      
+      <!-- Главный врач: Тарасова Дарья Вячеславовна -->
+      <div class="staff-card" data-modal="modal1">
+        <div class="staff-img-wrapper">
+          <img src="images/tarasova.jpg" alt="Тарасова Дарья Вячеславовна" class="staff-img" onerror="this.src='https://via.placeholder.com/200x200?text=Тарасова'">
+        </div>
+        <h3 class="staff-name">Тарасова Дарья Вячеславовна</h3>
+        <p class="staff-position"> Главный врач</p>
+        <p class="staff-short">Стаж 12+ лет. Терапия, хирургия, УЗИ-диагностика.</p>
+      </div>
+
+      <!-- Врач: Киселева Алена Александровна -->
+      <div class="staff-card" data-modal="modal2">
+        <div class="staff-img-wrapper">
+          <img src="images/kiseleva.jpg" alt="Киселева Алена Александровна" class="staff-img" onerror="this.src='https://via.placeholder.com/200x200?text=Киселева'">
+        </div>
+        <h3 class="staff-name">Киселева Алена Александровна</h3>
+        <p class="staff-position"> Ветеринарный врач</p>
+        <p class="staff-short">Стаж 13+ лет. Терапия, хирургия, УЗИ-диагностика.</p>
+      </div>
+
+      <!-- Врач: Шадт Виктория Юрьевна -->
+      <div class="staff-card" data-modal="modal3">
+        <div class="staff-img-wrapper">
+          <img src="images/shadrt.jpg" alt="Шадт Виктория Юрьевна" class="staff-img" onerror="this.src='https://via.placeholder.com/200x200?text=Шадт'">
+        </div>
+        <h3 class="staff-name">Шадт Виктория <br> Юрьевна</h3>
+        <p class="staff-position"> Ветеринарный врач</p>
+        <p class="staff-short">Стаж 6+ лет. Терапия, хирургия.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ПАЦИЕНТАМ (подразделы) -->
+  <section id="patients" class="patients">
+    <div class="container">
+      <h2 class="section-title">Пациентам</h2>
+      <div class="patients-grid">
+        <button class="patient-card" data-modal="modalControl">
+          <img src="images/document.svg" alt="Документ" class="patient-icon">
+          <span>Контролирующие органы</span>
+        </button>
+        <button class="patient-card" data-modal="modalMemo">
+          <img src="images/info.svg" alt="Инфо" class="patient-icon">
+          <span>Памятка для владельца</span>
+        </button>
+        <button class="patient-card" data-modal="modalRules">
+          <img src="images/file.svg" alt="Правила" class="patient-icon">
+          <span>Правила оказания услуг</span>
+        </button>
+        <button class="patient-card" data-modal="modalPreparation">
+          <img src="images/preparation.svg" alt="Подготовка" class="patient-icon">
+          <span>Подготовка пациентов</span>
+        </button>
+        <button class="patient-card" data-modal="modalPayment">
+          <img src="images/payment.svg" alt="Оплата" class="patient-icon">
+          <span>Порядок оплаты</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОТЗЫВЫ -->
+  <section id="reviews" class="reviews">
+    <div class="container">
+      <h2 class="section-title">Отзывы</h2>
+      <div class="reviews-slider">
+        <div class="review-card">
+          <div class="review-patient">
+            <img src="images/patient1.jpg" alt="Пациент" class="review-photo" onerror="this.src='https://via.placeholder.com/80x80?text=🐕'">
+            <div class="review-stars green">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+            </div>
+          </div>
+          <p class="review-text">"Отличная клиника! Врачи очень внимательные, всё объяснили."</p>
+          <p class="review-author">— Мария</p>
+        </div>
+        <div class="review-card">
+          <div class="review-patient">
+            <img src="images/patient2.jpg" alt="Пациент" class="review-photo" onerror="this.src='https://via.placeholder.com/80x80?text=🐕'">
+            <div class="review-stars green">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+            </div>
+          </div>
+          <p class="review-text">"Делали операцию собаке. Всё прошло хорошо. Спасибо команде!"</p>
+          <p class="review-author">— Алексей</p>
+        </div>
+        <div class="review-card">
+          <div class="review-patient">
+            <img src="images/patient3.jpg" alt="Пациент" class="review-photo" onerror="this.src='https://via.placeholder.com/80x80?text=🐹'">
+            <div class="review-stars green">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+              <img src="images/star_full.svg" alt="★" class="star-icon">
+              <img src="images/star.svg" alt="★" class="star-icon">
+            </div>
+          </div>
+          <p class="review-text">"Хорошая клиника, современное оборудование. Немного долго в очереди, но врачи отличные."</p>
+          <p class="review-author">— Елена</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- НАШИ ПАЦИЕНТЫ -->
+<section class="patient-gallery">
+  <div class="container">
+    <h2 class="section-title">Наши пациенты</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/patient4.jpg" alt="Счастливый пациент" class="gallery-img" onerror="this.src='https://via.placeholder.com/300x200?text=🐕'">
+      </div>
+      <div class="gallery-item">
+        <img src="images/patient5.jpg" alt="Счастливый пациент" class="gallery-img" onerror="this.src='https://via.placeholder.com/300x200?text=🐈'">
+      </div>
+      <div class="gallery-item">
+        <img src="images/patient6.jpg" alt="Счастливый пациент" class="gallery-img" onerror="this.src='https://via.placeholder.com/300x200?text=🐹'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПОДВАЛ -->
+<footer id="footer" class="footer">
+  <div class="container footer-container">
+    
+    <!-- Левая колонка - информация о клинике -->
+    <div class="footer-col">
+      <p class="footer-tagline">С любовью к животным, и уважением к людям. Ваш «Добрый Доктор».</p>
+      <p class="footer-description">
+        «Добрый Доктор» - современная ветеринарная клиника с опытными специалистами, 
+        собственной лабораторией и стационаром.
+      </p>
+      <div class="footer-features">
+        <span><img src="images/check.svg" alt="✓"> Ветеринары с опытом от 6 лет</span>
+        <span><img src="images/check.svg" alt="✓"> Вызов врача на дом</span>
+        <span><img src="images/check.svg" alt="✓"> Стоматология</span>
+        <span><img src="images/check.svg" alt="✓"> Ритуальные услуги</span>
+      </div>
+    </div>
+
+    <!-- Центральная колонка - контакты -->
+    <div class="footer-col">
+      <h4><img src="images/phone.svg" alt="Контакты"> Контакты</h4>
+      <p class="footer-phone"><img src="images/phone.svg" alt="Тел"> +7(982)717-82-67</p>
+      <p class="footer-address"><img src="images/location.svg" alt="Адрес"> г. Полевской, ул. Коммунистическая, 23</p>
+      <p class="footer-time"><img src="images/clock.svg" alt="Время"> Ежедневно с 9:00 до 21:00</p>
+      <p class="footer-email"><img src="images/email.svg" alt="Email"> dobroeserdce-vet@mail.ru</p>
+      <div class="socials">
+        <a href="https://vk.com/dobr_doc" class="social-link" target="_blank"><img src="images/vk.svg" alt="VK"></a>
+        <a href="https://t.me/dobr_doc" class="social-link" target="_blank"><img src="images/telegram.svg" alt="Telegram"></a>
+      </div>
+    </div>
+
+    <!-- Правая колонка - режим работы и документы -->
+    <div class="footer-col">
+      <h4><img src="images/clock.svg" alt="Режим работы"> Режим работы</h4>
+      <p class="footer-worktime"><strong>Пн-Сб:</strong> 9:00 - 21:00</p>
+      <p class="footer-worktime"><strong>Вс:</strong> 10:00 - 18:00</p>
+      <div class="warning">
+        <img src="images/warning.svg" alt="Внимание">
+        <span>Требуется консультация, 18+</span>
+      </div>
+      <button class="privacy-link" id="privacyLink">
+        <img src="images/document.svg" alt="Док"> Политика конфиденциальности
+      </button>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Добрый Доктор. Все права защищены.</p>
+  </div>
+</footer>
+
+<!-- Контейнер для кнопки авторизации VK (скрыт по умолчанию) -->
+<div id="vk_auth" style="display: none;"></div>
+
+  <!-- КНОПКА ЧАТ-БОТА (правый нижний угол, ТЗ) -->
+  <div class="chat-button" id="chatButton">
+    <img src="images/chat.svg" alt="Чат" class="chat-icon">
+  </div>
+
+  <!-- ========== ВСЕ МОДАЛЬНЫЕ ОКНА ========== -->
+
+ <!-- Модалка для Тарасовой Дарьи Вячеславовны -->
+<div class="modal" id="modal1">
+  <div class="modal-content">
+    <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
+    <h3><img src="images/heart.svg" alt="Главный врач" class="modal-icon"> Тарасова Дарья Вячеславовна</h3>
+    <p><strong>Главный врач, ветеринарный терапевт, хирург</strong></p>
+    <p>Стаж 15 лет. Окончила Уральскую государственную академию ветеринарной медицины (УрГАВМ).</p>
+    <p>Специализируется на терапии мелких домашних животных, хирургии, УЗИ-диагностике. Постоянно повышает квалификацию на российских и международных конференциях.</p>
+    <p><img src="images/calendar.svg" alt="Календарь" class="modal-icon"> Приём: Пн-Сб 10:00-17:00</p>
+  </div>
+</div>
+
+<!-- Модалка для Киселевой Алены Александровны -->
+<div class="modal" id="modal2">
+  <div class="modal-content">
+    <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
+    <h3><img src="images/heart.svg" alt="Врач" class="modal-icon"> Киселева Алена Александровна</h3>
+    <p><strong>Ветеринарный врач-терапевт</strong></p>
+    <p>Стаж 8 лет. Окончила Уральскую государственную академию ветеринарной медицины (УрГАВМ).</p>
+    <p>Специализируется на терапии, дерматологии, лечении грызунов, птиц и экзотических животных.</p>
+    <p><img src="images/calendar.svg" alt="Календарь" class="modal-icon"> Приём: Вт-Сб 11:00-18:00</p>
+  </div>
+</div>
+
+<!-- Модалка для Шадт Виктории Юрьевны -->
+<div class="modal" id="modal3">
+  <div class="modal-content">
+    <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
+    <h3><img src="images/heart.svg" alt="Врач" class="modal-icon"> Шадт Виктория Юрьевна</h3>
+    <p><strong>Ветеринарный врач-терапевт</strong></p>
+    <p>Стаж 6 лет. Окончила Уральский государственный аграрный университет (УрГАУ).</p>
+    <p>Специализируется на терапии, кардиологии, лечении кошек и собак. Проводит ЭХО-сердце.</p>
+    <p><img src="images/calendar.svg" alt="Календарь" class="modal-icon"> Приём: Пн-Пт 13:00-19:00, Сб 10:00-14:00</p>
+  </div>
+</div>
+
+  <!-- Модалки для раздела "Пациентам" -->
+  <div class="modal" id="modalControl">
+    <div class="modal-content">
+      <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
+      <h3><img src="images/document.svg" alt="Документ" class="modal-icon"> Контролирующие органы</h3>
+      <p>Информация о контролирующих органах будет добавлена после утверждения текста.</p>
+    </div>
+  </div>
+  <div class="modal" id="modalMemo">
+    <div class="modal-content">
+      <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
+      <h3><img src="images/info.svg" alt="Инфо" class="modal-icon"> Памятка для владельца пациента</h3>
+      <p>Текст памятки будет разработан позже.</p>
+    </div>
+  </div>
+  <div class="modal" id="modalRules">
+    <div class="modal-content">
+      <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
+      <h3><img src="images/document.svg" alt="Правила" class="modal-icon"> Правила оказания услуг</h3>
+      <p>Текст правил будет разработан позже.</p>
+    </div>
+  </div>
+  <div class="modal" id="modalPreparation">
+    <div class="modal-content">
+      <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
+      <h3><img src="images/check.svg" alt="Подготовка" class="modal-icon"> Подготовка пациентов к процедурам</h3>
+      <p>Текст подготовки будет разработан позже.</p>
+    </div>
+  </div>
+  <div class="modal" id="modalPayment">
+    <div class="modal-content">
+      <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
+      <h3><img src="images/payment.svg" alt="Оплата" class="modal-icon"> Порядок оплаты</h3>
+      <p>Текст о порядке оплаты будет разработан позже.</p>
+    </div>
+  </div>
+
+  <!-- Модалка политики конфиденциальности -->
+  <div class="modal modal-large" id="privacyModal">
+    <div class="modal-content">
+      <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
+      <h2><img src="images/shield.svg" alt="Защита" class="modal-icon"> Политика конфиденциальности</h2>
+      <div class="privacy-text">
+        <h3>1. Сбор информации</h3>
+        <p>Сбор информации осуществляется нами, когда вы регистрируетесь на сайте, заходите на свой аккаунт, совершаете у нас покупку либо участвуете в акциях, проводимых нашей клиникой, или выходите из аккаунта. В данную информацию входят следующие составляющие: ваше имя, адрес электронной почты, номер телефона и данные по кредитной карте. Также, мы автоматически регистрируем ваш компьютер и браузер, включая IP, ПО и аппаратные данные, и адрес запрашиваемой страницы.</p>
+
+        <h3>2. Использование информации</h3>
+        <p>Информация, которую мы получаем от вас, может быть использована, чтобы: сделать услуги соответствующими вашим индивидуальным запросам, сделать наш сайт лучше, сделать эффективнее систему поддержки пользователей, связаться с вами по электронной почте, организовать акцию, конкурс.</p>
+
+        <h3>3. Защита личных данных при онлайн-продажах</h3>
+        <p>Мы являемся единственным владельцем информации, собранной на нашем сайте. Мы не продаем, не передаем третьим лицам ваши личные данные ни по каким причинам, за исключением необходимых данных для выполнения запроса или транзакции, например, при отправке заказа.</p>
+
+        <h3>4. Раскрытие информации третьим лицам</h3>
+        <p>Мы не используем ваши личные данные при работе со сторонними компаниями, не продаём их, не передаём и не обмениваемся. Мы не несём ответственность за компании, которые помогают нам в работе сайта и ведении бизнеса при условии, что они соглашаются сохранять конфиденциальность информации. Мы передаём информацию только в случаях, предусмотренных законом, чтобы предотвратить преступления или помочь в их расследовании, если речь идёт о подозрении на мошенничество, действиях, физически угрожающих безопасности людей, нарушениях правил использования. Информация, являющаяся не конфиденциальной, может быть предоставлена другим компаниям в целях маркетинга, рекламы и т.д.</p>
+
+        <h3>5. Защита информации</h3>
+        <p>Использование файлов «cookie». Наши файлы «cookie» используются для улучшения доступа к сайту и определения повторных посещений. Кроме того, они позволяют отследить наиболее интересующие запросы. Файлы «cookie» не передают никакую конфиденциальную информацию.</p>
+
+        <h3>6. Отказ от подписки</h3>
+        <p>Для предоставления вам информации по вашему заказу, информации по продуктам и прочее мы используем электронную почту. Вы в любой момент можете отказаться от подписки, следуя подробным инструкциям, имеющимся в каждом письме.</p>
+
+        <h3>7. Согласие</h3>
+        <p>Пользуясь услугами нашего сайта, вы автоматически соглашаетесь с нашей политикой конфиденциальности.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Чат-бот окно (будет активировано через TS) -->
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <span>Чат с Добрым Доктором</span>
+      <button class="chat-close"><img src="images/close.svg" alt="×" class="close-icon"></button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot">
+        Здравствуйте! Чем могу помочь?
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" placeholder="Введите сообщение..." id="chatInput">
+      <button id="chatSend"><img src="images/send.svg" alt="Отправить"></button>
+    </div>
+  </div>
+
+<script>
+  // Прокрутка для раздела услуг
+  const scrollContainer = document.getElementById('servicesScrollContainer');
+  const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+  const scrollRightBtn = document.getElementById('scrollRightBtn');
+  
+  if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+    // Прокрутка влево
+    scrollLeftBtn.addEventListener('click', () => {
+      scrollContainer.scrollBy({
+        left: -280,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Прокрутка вправо
+    scrollRightBtn.addEventListener('click', () => {
+      scrollContainer.scrollBy({
+        left: 280,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Скрываем кнопки, если прокрутка не нужна (опционально)
+    const checkScrollButtons = () => {
+      const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      if (maxScroll <= 0) {
+        scrollLeftBtn.style.display = 'none';
+        scrollRightBtn.style.display = 'none';
+      } else {
+        scrollLeftBtn.style.display = 'flex';
+        scrollRightBtn.style.display = 'flex';
+      }
+    };
+    
+    checkScrollButtons();
+    window.addEventListener('resize', checkScrollButtons);
+  }
+</script>
+
+<!-- Подключение скомпилированного TypeScript -->
+<script src="js/main.js" type="module" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,1272 @@
+/* ---------- RESET И БАЗОВЫЕ СТИЛИ ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #f5f5d9;
+  color: #1e2a1e;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- ЦВЕТОВАЯ ПАЛИТРА ---------- */
+:root {
+  --white: #ffffff;
+  --green-primary: #409337;
+  --green-dark: #215b2b;
+  --green-light: #77ba59;
+  --green-bright: #50aa39;
+  --bg-cream: #ffffd4;
+  --bg-light-green: #b0dba7;
+  --text-dark: #1e2a1e;
+}
+
+/* ---------- ОБЩИЕ СТИЛИ ДЛЯ СЕКЦИЙ ---------- */
+section {
+  margin: 0;
+  background: var(--white);
+}
+
+/* Отступы внутри секций */
+section .container {
+  padding: 60px 24px;
+}
+
+/* Для hero отступы свои */
+.hero .container {
+  padding: 80px 24px;
+}
+
+/* ---------- ОБЩИЕ СТИЛИ ДЛЯ ИКОНОК ---------- */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.feature-icon,
+.staff-icon,
+.patient-icon,
+.footer-icon,
+.cookie-icon,
+.btn-icon,
+.modal-icon,
+.message-icon,
+.header-icon,
+.link-icon,
+.warning-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.star-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--green-bright);
+  display: inline-block;
+}
+
+.close-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.chat-icon {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.social-link img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* ---------- ТИПОГРАФИКА ---------- */
+.section-title {
+  font-size: 2.2rem;
+  color: var(--green-dark);
+  text-align: center;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--green-primary);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* ---------- COOKIE УВЕДОМЛЕНИЕ ---------- */
+.cookie-notice {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--green-dark);
+  color: white;
+  z-index: 1100;
+  padding: 12px 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.cookie-notice.show {
+  transform: translateY(0);
+}
+
+.cookie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cookie-content img {
+  filter: brightness(0) invert(1);
+}
+
+.cookie-btn {
+  background: var(--green-light);
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.cookie-btn:hover {
+  background: var(--green-bright);
+}
+
+/* ---------- ХЕДЕР ---------- */
+.header {
+  background: var(--white);
+  /* position: sticky;
+  top: 0; */
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  letter-spacing: 0.5px;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--green-dark);
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--green-primary);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  background: linear-gradient(135deg, rgba(64, 147, 55, 0.85), #81aa46c5), 
+              url('../images/header.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 32px;
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-btn {
+  background: white;
+  color: var(--green-primary);
+  border: none;
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-btn:hover {
+  transform: scale(1.02);
+  background: var(--green-primary);
+  color: white;
+}
+
+.hero-btn:hover .btn-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* ---------- О НАС ---------- */
+.about {
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.about .container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.about-features {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  background: var(--bg-light-green);
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-weight: 600;
+  color: var(--green-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---------- УСЛУГИ И ЦЕНЫ ---------- */
+.services {
+  background: var(--bg-cream);
+  position: relative;
+}
+
+.services-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+/* Скрываем ползунок (scrollbar) */
+.services-scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+  
+  /* Скрываем scrollbar для разных браузеров */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE и Edge */
+}
+
+.services-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.services-scroll-container::-webkit-scrollbar-track {
+  background: var(--bg-light-green);
+  border-radius: 10px;
+}
+
+.services-scroll-container::-webkit-scrollbar-thumb {
+  background: var(--green-light);
+  border-radius: 10px;
+}
+
+.services-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: var(--green-primary);
+}
+
+/* Сетка карточек */
+.services-grid {
+  display: flex;
+  gap: 24px;
+  padding: 8px 4px;
+  width: max-content;
+}
+
+/* Карточка услуги */
+.service-card {
+  background: var(--bg-light-green);
+  border-radius: 20px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: 0.2s;
+  min-width: 240px;
+  max-width: 260px;
+  width: 240px;
+  flex-shrink: 0;
+  
+  /* Flexbox для выравнивания */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  background: var(--green-light);
+}
+
+/* Контейнер для текста */
+.service-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.service-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 16px;
+  line-height: 1.3;
+  
+  /* Ограничиваем высоту текста */
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.service-price {
+  font-size: 1rem;
+  color: var(--green-primary);
+  font-weight: 600;
+  background: var(--white);
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-top: auto;
+  
+  /* Центрирование цены */
+  align-self: center;
+}
+
+/* Кнопки прокрутки */
+.scroll-btn {
+  background: var(--green-bright);
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-btn:hover {
+  background: var(--green-dark);
+  transform: scale(1.05);
+}
+
+.scroll-btn img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.scroll-btn:active {
+  transform: scale(0.95);
+}
+
+/* Блок с примечанием об уточнении цены */
+.services-note {
+  background: var(--bg-light-green);
+  border-radius: 20px;
+  padding: 20px 28px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.services-note p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  color: var(--green-dark);
+  margin: 0;
+}
+
+.note-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.note-link {
+  color: var(--green-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.note-link:hover {
+  color: var(--text-dark);
+}
+
+
+/* ---------- СОТРУДНИКИ ---------- */
+.staff {
+  background: var(--bg-light-green);
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 320px));
+  gap: 40px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.staff-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 28px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.25s;
+  border: 1px solid #e0e0e0;
+  max-width: 320px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.staff-card:hover {
+  transform: translateY(-6px);
+}
+
+.staff-img-wrapper {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.staff-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.staff-name {
+  font-size: 1.2rem;
+  color: var(--green-dark);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.staff-position {
+  color: var(--green-primary);
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.staff-short {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* ---------- ПАЦИЕНТАМ ---------- */
+.patients {
+  background: var(--white);
+}
+
+.patients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.patient-card {
+  background: var(--bg-light-green);
+  border: none;
+  padding: 24px 16px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--green-dark);
+}
+
+.patient-card img {
+  width: 40px;
+  height: 40px;
+}
+
+.patient-card:hover {
+  background: var(--green-light);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.patient-card:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* ---------- ОТЗЫВЫ ---------- */
+.reviews {
+  background: var(--bg-cream);
+}
+
+.reviews-slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.review-card {
+  background: var(--white);
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid #e0e0e0;
+}
+
+.review-patient {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.review-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--green-light);
+}
+
+.review-stars {
+  display: flex;
+  gap: 4px;
+}
+
+.review-stars.green img {
+  filter: brightness(0) saturate(100%) invert(51%) sepia(18%) saturate(1591%) hue-rotate(69deg) brightness(94%) contrast(85%);
+}
+
+.review-text {
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.review-author {
+  font-weight: 600;
+  color: var(--green-dark);
+}
+
+/* ---------- ГАЛЕРЕЯ "НАШИ ПАЦИЕНТЫ" ---------- */
+.patient-gallery {
+  background: var(--bg-light-green);
+  padding: 20px 0;
+}
+
+.gallery-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+/* Оверлей с именем при наведении */
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(33, 91, 43, 0.9));
+  padding: 20px;
+  transform: translateY(100%);
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+.gallery-overlay span {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ---------- ПОДВАЛ ---------- */
+.footer {
+  background: var(--green-dark);
+  color: white;
+  padding: 48px 0 24px;
+  margin-top: 0;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Убран белый логотип */
+.footer-logo {
+  display: none;
+}
+
+/* Левая колонка - информация о клинике */
+.footer-about {
+  margin-top: 0;
+}
+
+.footer-tagline {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.footer-description {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.footer-features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-features span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.footer-features img {
+  filter: brightness(0) invert(1);
+  width: 16px;
+  height: 16px;
+}
+
+/* Центральная колонка - контакты */
+.footer-col h4 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-col h4 img {
+  filter: brightness(0) invert(1);
+}
+
+.footer-phone, .footer-address, .footer-time, .footer-email {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-phone img, .footer-address img, .footer-time img, .footer-email img {
+  filter: brightness(0) invert(1);
+  width: 18px;
+  height: 18px;
+}
+
+/* Соцсети - только VK и Telegram */
+.socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.social-link {
+  background: rgba(255,255,255,0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.social-link:hover {
+  background: var(--green-light);
+  transform: translateY(-3px);
+}
+
+/* Правая колонка - режим работы и документы */
+.footer-worktime {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-worktime img {
+  filter: brightness(0) invert(1);
+  width: 18px;
+  height: 18px;
+}
+
+.warning {
+  background: rgba(255,255,255,0.15);
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.warning img {
+  filter: brightness(0) invert(1);
+  width: 16px;
+  height: 16px;
+}
+
+.privacy-link {
+  background: none;
+  border: none;
+  color: var(--white);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.privacy-link img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 0.8rem;
+}
+
+/* ---------- КНОПКА ЧАТ-БОТА ---------- */
+.chat-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: var(--green-bright);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 1000;
+}
+
+.chat-button:hover {
+  background: var(--green-primary);
+  transform: scale(1.05);
+}
+
+/* ---------- ОКНО ЧАТ-БОТА ---------- */
+.chat-window {
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  width: 340px;
+  height: 450px;
+  background: white;
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  z-index: 1001;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.chat-window.open {
+  display: flex;
+}
+
+.chat-header {
+  background: var(--green-dark);
+  color: white;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header img {
+  filter: brightness(0) invert(1);
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+
+.chat-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f9f9f9;
+}
+
+.message {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.message.bot {
+  background: var(--bg-light-green);
+  align-self: flex-start;
+  color: var(--green-dark);
+}
+
+.message.user {
+  background: var(--green-primary);
+  color: white;
+  align-self: flex-end;
+}
+
+.message.user img {
+  filter: brightness(0) invert(1);
+}
+
+.chat-input-area {
+  display: flex;
+  padding: 12px;
+  border-top: 1px solid #eee;
+  gap: 8px;
+  background: white;
+}
+
+#chatInput {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+#chatSend {
+  background: var(--green-primary);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#chatSend img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+/* ---------- МОДАЛЬНЫЕ ОКНА ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  padding: 32px;
+  border-radius: 28px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-large {
+  max-width: 700px;
+}
+
+.modal-content h2, .modal-content h3 {
+  color: var(--green-dark);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-content p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.privacy-text h3 {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+/* ---------- АДАПТИВ (МОБИЛЬНЫЕ УСТРОЙСТВА) ---------- */
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 1.1rem;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 0 10px;
+  }
+  
+  .nav.show {
+    display: flex;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero {
+    min-height: 400px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .about-features {
+    gap: 12px;
+  }
+  
+  .cookie-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .chat-window {
+    width: calc(100% - 48px);
+    right: 24px;
+    left: 24px;
+    bottom: 90px;
+  }
+  
+  section .container {
+    padding: 40px 20px;
+  }
+  
+  .hero .container {
+    padding: 60px 20px;
+  }
+}
+
+/* Адаптив для услуг */
+@media (max-width: 768px) {
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .scroll-btn img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .service-card {
+    min-width: 200px;
+    padding: 18px 16px;
+  }
+  
+  .service-title {
+    font-size: 1rem;
+  }
+  
+  .service-price {
+    font-size: 0.85rem;
+    padding: 4px 12px;
+  }
+  
+  .services-wrapper {
+    gap: 10px;
+  }
+  
+  .services-note {
+    padding: 16px 20px;
+  }
+  
+  .services-note p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .scroll-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .service-card {
+    min-width: 180px;
+  }
+  
+  .services-wrapper {
+    gap: 8px;
+  }
+}
+
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .patient-gallery {
+    padding: 40px 0;
+  }
+  
+  .gallery-grid {
+    gap: 20px;
+  }
+  
+  .gallery-item {
+    min-width: 200px;
+  }
+  
+  .gallery-img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 680px) {
+  .gallery-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .gallery-item {
+    max-width: 280px;
+    width: 100%;
+  }
+}
+
+/* Адаптив для карточек сотрудников */
+@media (max-width: 1000px) {
+  .staff-grid {
+    grid-template-columns: repeat(3, minmax(250px, 280px));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 850px) {
+  .staff-grid {
+    grid-template-columns: repeat(2, minmax(260px, 300px));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .staff-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .staff-card {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}

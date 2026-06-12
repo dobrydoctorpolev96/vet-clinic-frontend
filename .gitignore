@@ -1,0 +1,50 @@
+# Зависимости
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Файлы IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Файлы ОС
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Логи
+*.log
+
+# Временные файлы
+*.tmp
+*.temp
+
+# Секреты и конфиги (если есть)
+.env
+.env.local
+.env.*.local
+
+# TypeScript (исходники не нужны в репозитории для Pages)
+ts/
+# Но оставляем скомпилированный js/
+!js/
+
+# Docker (не нужен для Pages)
+Dockerfile
+docker-compose.yml
+nginx.conf
+
+# Деплой конфиги для других платформ
+vercel.json
+netlify.toml
+.vercel
+.netlify
+
+# json файлы 
+package-lock.json
+package.json
+tsconfig.json

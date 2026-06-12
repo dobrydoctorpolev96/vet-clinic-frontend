@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Страница не найдена - Добрый Доктор</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(135deg, #f5f5d9 0%, #e8e8c8 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e2a1e;
+    }
+
+    .error-container {
+      text-align: center;
+      padding: 40px 20px;
+      max-width: 600px;
+    }
+
+    .error-code {
+      font-size: 120px;
+      font-weight: 800;
+      color: #409337;
+      text-shadow: 4px 4px 0 #215b2b;
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+
+    .error-title {
+      font-size: 28px;
+      margin-bottom: 16px;
+      color: #215b2b;
+    }
+
+    .error-text {
+      font-size: 18px;
+      margin-bottom: 32px;
+      color: #4a5a4a;
+    }
+
+    .home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #409337;
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .home-btn:hover {
+      background: #215b2b;
+      transform: scale(1.02);
+    }
+
+    .home-btn img {
+      width: 20px;
+      height: 20px;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 14px;
+      color: #6a7a6a;
+    }
+
+    @media (max-width: 768px) {
+      .error-code {
+        font-size: 80px;
+      }
+      .error-title {
+        font-size: 22px;
+      }
+      .error-text {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Страница не найдена</h1>
+    <p class="error-text">
+      К сожалению, страница, которую вы ищете, не существует или была перемещена.
+    </p>
+  </div>
+  <div class="footer">
+    <p>© 2024 Добрый Доктор — Ветеринарная клиника</p>
+  </div>
+</body>
+</html>

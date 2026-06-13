@@ -5,8 +5,8 @@ class ChatBot {
         this.isConnected = false;
         this.reconnectAttempts = 0;
         this.maxReconnectAttempts = 5;
-        this.apiUrl = '/api/v1';
-        this.wsUrl = 'wss://backend-service-name.onrender.com/api/v1/ws/chat/';
+        this.apiUrl = 'https://vet-clinic-backend-bot.onrender.com/api/v1';
+        this.wsUrl = 'wss://vet-clinic-backend-bot.onrender.com/api/v1/ws/chat/';
         this.chatWindow = document.getElementById('chatWindow');
         this.chatButton = document.getElementById('chatButton');
         this.chatClose = document.querySelector('.chat-close');

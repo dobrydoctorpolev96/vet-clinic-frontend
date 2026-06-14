@@ -9,7 +9,8 @@ class ChatBot {
         this.vkUserId = null;
         this.vkAccessToken = null;
         this.vkAppId = 12345678;
-        this.wsUrl = 'wss://api.ваш-сервер.ru/chat/ws';
+        this.apiUrl = 'https://vet-clinic-backend-bot.onrender.com/api/v1';
+        this.wsUrl = 'wss://vet-clinic-backend-bot.onrender.com/api/v1/ws/chat/';
         this.chatWindow = document.getElementById('chatWindow');
         this.chatButton = document.getElementById('chatButton');
         this.chatClose = document.querySelector('.chat-close');
